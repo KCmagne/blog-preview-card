@@ -1,56 +1,91 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+:root{
+    --yellow: hsl(47, 88%, 63%);
+    --white: hsl(0, 0%, 100%);
+    --gray: hsl(0, 0%, 42%);
+    --darkgray: hsl(0, 0%, 7%);
+}
+
+*{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 300px;
-    max-width: 100%;
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-}
-
-.card-content {
-    padding: 20px;
-}
-
-.card-title {
-    font-size: 1.5em;
-    margin: 0 0 10px;
-}
-
-.card-description {
-    font-size: 1em;
-    color: #666;
-    margin: 0 0 20px;
-}
-
-.card-footer {
+body{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #eee;
-    padding: 10px 20px;
+    justify-content: center;
+    background-color: var(--yellow);
+    height: calc(100vh - 1px);
+    font-family: sans-serif;
 }
 
-.card-footer a {
+.container{
+    background-color: var(--white);
+    padding: 1.25rem;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    border: 1px solid var(--darkgray);
+    border-radius: 1rem;
+    box-shadow: 5px 5px var(--darkgray);
+}
+
+.tag img{
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tag h5{
+    display: inline-block;
+    background-color: var(--yellow);
+    font-size: clamp(0.65rem, 1vw, 0.75rem);
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.825rem;
+}
+
+.tag p{
+    font-size: 0.725rem;
+    margin-bottom: .9rem;
+}
+
+.description h2{
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+}
+
+.description p{
+    color: var(--gray);
+    font-size: 0.825rem;
+    margin-bottom: 1.15rem;
+}
+
+.avatar{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.avatar img{
+    width: 1.825rem;
+    border-radius: 50%;
+    margin-left: 0;
+}
+
+.avatar a{
     text-decoration: none;
-    color: #3498db;
+    font-size: 0.7rem;
     font-weight: bold;
+    color: var(--darkgray);
 }
 
-.card-footer a:hover {
-    text-decoration: underline;
+:where(h5, h2, img, a):hover{
+    cursor: pointer;
+}
+
+@media (min-width: 20rem){
+    .container{
+        max-width: 20rem;
+    }
 }
